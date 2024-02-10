@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "prestart": "tsc",
     "build": "tsc && tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "start": "node dist/index.js",
-    "dev": "nodemon"
+    "start": "ENV=production node dist/index.js",
+    "dev": "ENV=development nodemon"
   },
   "author": "Thallysson Klein",
   "dependencies": {
-    "@sentry/node": "7.98.0",
+    "dd-trace": "^5.2.0",
     "dotenv": "16.4.1",
     "express": "4.18.2"
   },

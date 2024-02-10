@@ -1,15 +1,7 @@
 import dotenv from "dotenv";
 
 type IConfig = {
-  sentryDsn: string;
-  tracesSampleRate: number;
-  logLevel: string;
-  transport: {
-    target: string;
-    options: {
-      colorize: boolean;
-    };
-  };
+  env: string;
 };
 
 export default class Config {
@@ -18,20 +10,15 @@ export default class Config {
   constructor() {
     dotenv.config();
 
-    if (!process.env.SENTRY_DSN) {
-      throw new Error("SENTRY_DSN is not defined");
+    if (!process.env.ENV) {
+      throw new Error("ENV is not defined");
     }
 
+    process.env.DD_ENV = process.env.ENV;
+    process.env.DD_SERVICE = "local-template";
+
     this.config = {
-      sentryDsn: process.env.SENTRY_DSN,
-      tracesSampleRate: parseFloat(process.env.TRACES_SAMPLE_RATE) || 1.0,
-      logLevel: process.env.LOG_LEVEL || "info",
-      transport: {
-        target: process.env.LOG_TARGET || "pino-pretty",
-        options: {
-          colorize: Boolean(process.env.LOG_COLORIZE) || true,
-        },
-      },
+      env: process.env.DD_ENV,
     };
   }
 

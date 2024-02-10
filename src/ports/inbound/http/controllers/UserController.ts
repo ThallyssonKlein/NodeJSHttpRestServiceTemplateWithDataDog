@@ -12,7 +12,7 @@ export default class UserController {
     const observability = new Observability();
     observability.startTransaction("getUserById");
     observability.startSpan(this.spanName);
-    observability.addDataToSpan(this.spanName, "id", req.params.id);
+    observability.addDataToSpan(this.spanName, "userId", req.params.id);
 
     try {
       const adapterResponse = await this.inboundUserAdapter.getUserById(
@@ -23,7 +23,7 @@ export default class UserController {
       observability.endTransaction();
       res.send(adapterResponse);
     } catch (err) {
-      observability.addDataToSpan(this.spanName, "error", err.name);
+      observability.addDataToSpan(this.spanName, "errorName", err.name);
       observability.endSpan(this.spanName);
       observability.endTransaction();
 

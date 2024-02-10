@@ -14,7 +14,8 @@
                 "ts-node/register"
             ],
             "env": {
-                "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json" // substitua pelo caminho do seu arquivo tsconfig.json
+                "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json",
+                "ENV": "development"
             }
         }
     ]
