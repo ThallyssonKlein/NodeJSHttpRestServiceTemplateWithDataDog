@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "Launch via Nodemon",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
+            "program": "${workspaceFolder}/src/index.ts", // substitua pelo caminho do seu arquivo de entrada
+            "restart": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "env": {
+                "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json" // substitua pelo caminho do seu arquivo tsconfig.json
+            }
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "CommonJS",
+    "outDir": "dist",
+    "rootDir": "./src",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@adapters/*": ["adapters/*"],
+      "@domain/*": ["domain/*"],
+      "@ports/*": ["ports/*"],
+      "@config/*": ["config/*"]
+    },
+    "types": ["node"]
+  }
+}
