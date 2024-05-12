@@ -1,4 +1,4 @@
 GET http://localhost:3000/ping
 
 ###
-GET http://localhost:3000/user/11
+GET http://localhost:3000/user/9

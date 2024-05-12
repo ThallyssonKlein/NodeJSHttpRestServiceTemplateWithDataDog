@@ -15,7 +15,11 @@ export default class Config {
     }
 
     process.env.DD_ENV = process.env.ENV;
-    process.env.DD_SERVICE = "local-template";
+    if (process.env.ENV === "development") {
+      process.env.DD_SERVICE = "local-template";
+    } else {
+      process.env.DD_SERVICE = "production-template";
+    }
 
     this.config = {
       env: process.env.DD_ENV,

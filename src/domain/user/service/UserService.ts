@@ -1,10 +1,10 @@
 import NotAllowedToBeFound from "../errors/NotAllowedToBeFound";
-import IUser from "../entity/User";
+import IUser from "../entity/IUser";
 import OutboundUserAdapter from "@adapters/outbound/http/user";
 import Observability from "@adapters/outbound/observability";
 
 export default class UserService {
-  private readonly spanName = "UserService.getUserById"
+  private readonly spanName = "UserService.getUserById";
 
   constructor(private outboundUserAdapter: OutboundUserAdapter) {}
 

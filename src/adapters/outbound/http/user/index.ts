@@ -1,12 +1,11 @@
-import User from "@domain/user/entity/User";
 import { InternalError } from "@ports/inbound/http/errors";
 import OutboundUserPort from "@ports/outbound/http/user";
 import OutboundIUserDTO from "@ports/outbound/http/user/dto/OutboundIUserDTO";
-import IUser from "@domain/user/entity/User";
+import IUser from "@domain/user/entity/IUser";
 import Observability from "../../observability";
 
 export default class OutboundUserAdapter {
-  private readonly spanName = "OutboundUserAdapter.getUserById"
+  private readonly spanName = "OutboundUserAdapter.getUserById";
 
   constructor(private userPort: OutboundUserPort) {}
 

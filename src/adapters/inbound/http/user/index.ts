@@ -1,5 +1,5 @@
-import User from "@domain/user/entity/User";
-import InboundIUserDTO from "@ports/inbound/http/dto/User";
+import User from "@domain/user/entity/IUser";
+import InboundIUserDTO from "@ports/inbound/http/dto/InboundIUserDTO";
 import UserService from "@domain/user/service/UserService";
 import {
   BadRequestError,
