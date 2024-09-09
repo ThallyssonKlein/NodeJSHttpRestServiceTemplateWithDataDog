@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 
 type IConfig = {
   env: string;
+  port: number;
 };
 
 export default class Config {
@@ -23,6 +24,7 @@ export default class Config {
 
     this.config = {
       env: process.env.DD_ENV,
+      port: parseInt(process.env.PORT || "3000"),
     };
   }
 
